@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+<head>
+	<title>5秒跳转页面</title>
+</head>
+<body>
+  <!--先编写好网页布局-->
+  <h1>操作成功</h1>
+  <span id="second" >5</span>秒后回到主页<a href="javascript:window.history.back();">返回</a>
+
+  <script type="text/javascript">  
+    var num = 5;//给num赋予"second"XX值，5
+    function count(){
+        num--;
+        document.getElementById("second").innerHTML = num;//改变"second"XX值为num现在的值(num--)
+        if(num==1){
+            location.assign("http://www.imooc.com");
+        }    
+    }
+    setInterval("count()",1000);
+  
+  </script> 
+</body>
+</html>
